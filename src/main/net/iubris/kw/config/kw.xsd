@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- Massimiliano Leone - maximilianus@gmail.com - 2009, GPL license -->
+   
+    <xs:element name="logics" type="logicsType"></xs:element>
+
+ 	<xs:complexType name="logicsType">
+    	<xs:sequence>
+    		<xs:element name="logic" type="logicType" maxOccurs="unbounded" minOccurs="1"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="logicType">
+    	<xs:sequence>
+    		<xs:element name="name" type="nameType" maxOccurs="1" minOccurs="1"></xs:element>
+    		<xs:element name="class" type="classType" maxOccurs="1" minOccurs="1"></xs:element>
+    		<xs:element name="ok" type="okType" minOccurs="0" maxOccurs="1"></xs:element>
+    		<xs:element name="input" type="inputType" minOccurs="0" maxOccurs="1"></xs:element>
+    		<xs:element name="error" type="errorType" minOccurs="0" maxOccurs="1"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="nameType">
+    	<xs:restriction base="xs:string">
+    		<xs:minLength value="1"></xs:minLength>
+    	</xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="classType">
+    	<xs:restriction base="xs:string">
+    		<xs:pattern value="([a-z]{1}[\w]*\.)*([A-Z]{1}[\w]*)"></xs:pattern>
+    	</xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="okType">
+    	<xs:restriction base="xs:string">
+    		<xs:pattern value="/{1}[\w\(\-\)\(_\)\(/\)]*[\w\(-\)\(_\)]+(\.[\w]+)*"></xs:pattern>
+    	</xs:restriction>
+   </xs:simpleType>
+    
+    <xs:simpleType name="inputType">
+    	<xs:restriction base="xs:string">
+    		<xs:pattern value="/{1}[\w\(\-\)\(_\)\(/\)]*[\w\(-\)\(_\)]+(\.[\w]+)*"></xs:pattern>
+    	</xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="errorType">
+    	<xs:restriction base="xs:string">
+    		<xs:pattern value="/{1}[\w\(\-\)\(_\)\(/\)]*[\w\(-\)\(_\)]+(\.[\w]+)*"></xs:pattern>
+    	</xs:restriction>
+    </xs:simpleType>
+   
+</xs:schema>
