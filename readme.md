@@ -10,7 +10,7 @@ Of course no ssl nor secure password support is supported. It comes just as an e
 
 All is reflection based, and business (controller) logic level maps view level just using field names reflection.
 
-A complete example is available [here](../..//kw_archimedes_kv_optimusprime__sample)
+A complete example is available [here](../../../kw_archimedes_kv_optimusprime__sample)
 
 Starting from jsp form:
 <pre>
